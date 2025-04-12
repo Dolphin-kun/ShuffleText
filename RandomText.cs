@@ -3,7 +3,6 @@
     public enum CharType
     {
         Alphabet,
-        Kanji,
         Number,
         Symbol,
         Custom
