@@ -54,26 +54,14 @@ namespace ShuffleText
 
             var text = "";
             var interval = item.Interval.GetValue(frame, length, fps) * fps;
-            var offset = item.Delay ? 73856093 ^ textIndex * 19349663 : 1;
 
-            var seed = 0;
-            if (interval < 1)
-            {
-                seed = offset * frame + (item.Delay ? textIndex : 0);
-            }
+            int section;
+            if ((int)interval == 0)
+                section = frame;
             else
-            {
-                if ((int)(frame % interval) == 0)
-                {
-                    seed = offset * frame + (item.Delay ? textIndex : 0);
-                }
-                else
-                {
-                    var q = (int)(frame / interval);
-                    var closestFrame = q * interval;
-                    seed = (int)closestFrame * offset + (item.Delay ? textIndex : 0);
-                }
-            }
+                section = frame / (int)interval;
+            int num = (item.Delay ? ((section + textIndex) * (section + textIndex)) + textIndex : section * section);
+            var seed = new Random(num).Next();
 
             if (Enum.TryParse<CharType>(item.Enum_Mode.ToString(), out var textType))
             {
@@ -83,8 +71,6 @@ namespace ShuffleText
             {
                 text = "?";
             }
-
-
 
             if (commandList != null)
                 disposer.RemoveAndDispose(ref commandList);
