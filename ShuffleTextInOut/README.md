@@ -18,7 +18,8 @@
 2. テキストの`文字ごとに分割`をオンにしてください。
 
 ## パラメータ
-![image](https://github.com/user-attachments/assets/1f2bae41-9c80-4787-be84-1b395ed06d49)
+![image](https://github.com/user-attachments/assets/96c43601-9655-48d5-ad6d-89c3933a3ff1)
+
 
 ## 効果
 ### 登場時・退場時
