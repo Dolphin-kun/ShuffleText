@@ -72,6 +72,8 @@ namespace ShuffleText
                 text = "?";
             }
 
+
+
             if (commandList != null)
                 disposer.RemoveAndDispose(ref commandList);
 
