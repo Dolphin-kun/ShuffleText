@@ -1,4 +1,4 @@
-using ShuffleTextInOut.ShuffleTextInOut_Enum;
+﻿using ShuffleTextInOut.ShuffleTextInOut_Enum;
 using System.Numerics;
 using Vortice.Direct2D1;
 using Vortice.Direct2D1.Effects;
